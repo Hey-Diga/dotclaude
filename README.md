@@ -19,6 +19,8 @@ graph LR
 ### 1️⃣ **Define** (`/new-gh-issue`)
 Claude researches your codebase, understands the problem context, and creates a comprehensive GitHub issue with implementation details.
 
+💡 **Tip:** After creating an issue, Claude will suggest: "I can start working on it now. Run `/start-working-on-issue [issue-number]` to get started."
+
 ### 2️⃣ **Implement** (`/start-working-on-issue`)
 Claude automatically sets up the development environment, implements the complete solution, runs tests, and creates a pull request - all in one command.
 
@@ -33,6 +35,12 @@ Claude addresses PR review comments, makes requested changes, and updates the pu
 - **Quality First**: Automatic linting, type checking, and test execution
 - **Git Best Practices**: Properly formatted commits with issue references
 
+## 📋 Prerequisites
+
+- [GitHub CLI](https://cli.github.com/) installed and authenticated (`gh auth login`)
+- Git configured with your credentials
+- Claude Code installed
+
 ## 📦 Installation
 
 1. Clone this repository:
@@ -41,9 +49,13 @@ git clone https://github.com/heydiga/dotclaude.git
 cd dotclaude
 ```
 
-2. Copy to your Claude configuration directory:
+2. Copy only the necessary files to your Claude configuration directory:
 ```bash
-cp -r . ~/.claude/
+# Create the directory if it doesn't exist
+mkdir -p ~/.claude
+
+# Copy commands and configuration
+cp -r commands ~/.claude/
 ```
 
 3. Restart Claude Code or reload your configuration
