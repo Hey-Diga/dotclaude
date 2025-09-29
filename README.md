@@ -134,7 +134,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built for [Claude Code](https://claude.ai/code) by [heydiga](https://heydiga.com)
 - Inspired by the need for truly autonomous development workflows
-- Infinite thanks to [@flype](https://github.com/flype) for inspiration
+- Infinite thanks to [@flype](https://github.com/flype) for inspiration with [dot-claude](https://github.com/flype/dot-claude)
 - Thanks to all contributors and the Claude Code community
 
 ## 🔗 Links
