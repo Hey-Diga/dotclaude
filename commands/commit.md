@@ -26,13 +26,19 @@ You are tasked with creating git commits for the changes made during this sessio
 
 4. **Create commit with proper format:**
    - Get current branch name: `git branch --show-current`
-   - Extract issue number from branch name (first part before the dash, e.g., from `123-user-dashboard` get `123`)
-   - Format: `#{issue-number} {descriptive-message}`
-   - Create a descriptive and extensive commit message based on the git diff changes
-   - The `#` prefix will create a reference link to the GitHub issue
-   - Examples: 
-     - `#123 Add comprehensive user dashboard component with profile management and settings`
-     - `#45 Fix media upload validation to handle multiple file types and size limits`
+   - Extract issue number from branch name (first part before the dash)
+   - Detect issue tracker:
+     - If branch starts with `hey-` → Linear issue (format: `HEY-123`)
+     - Otherwise → GitHub issue (format: `#123`)
+   - Follow **Conventional Commits** format: `<type>[optional scope]: <description> <issue-ref>`
+   - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`
+   - Description: Lowercase, imperative mood, no period at end
+   - Add issue reference at the end to create a link
+   - Examples:
+     - Linear: `feat(dashboard): add comprehensive user dashboard component with profile management HEY-123`
+     - GitHub: `fix(media): handle multiple file types and size limits in upload validation #45`
+     - Linear: `refactor(auth): simplify token validation logic HEY-78`
+     - GitHub: `docs(api): update authentication endpoint documentation #92`
    - NEVER add "Generated with Claude Code" or similar AI attribution
 
 5. **Execute commit:**
@@ -47,8 +53,13 @@ You are tasked with creating git commits for the changes made during this sessio
 
 ## Important:
 - **NEVER add co-author information or Claude attribution**
-- Always follow the exact format: `#{issue-number} {descriptive-message}`
-- Message should be descriptive and extensive, explaining what was changed and why
+- Always follow **Conventional Commits** format: `<type>[optional scope]: <description> <issue-ref>`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`
+- Use imperative mood (e.g., "add" not "added" or "adds")
+- Description should be lowercase and descriptive
+- Issue reference format depends on tracker:
+  - Linear issues (branch `hey-X`): Use `HEY-123` format
+  - GitHub issues: Use `#123` format
 - Commits should be authored solely by the user
 - Do not include any "Generated with Claude" messages
 - Do not add "Co-Authored-By" lines
